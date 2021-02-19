@@ -37,12 +37,10 @@ html body div.main {
 }
 
 html body div.main div.root {
-  border: 1px solid red;
   width: 600px;
 }
 
 html body div.main div.root #divOne {
-  border: 1px solid blue;
   text-align: center;
   padding: 5em 0em;
   -webkit-box-sizing: border-box;

@@ -76,6 +76,7 @@
     var pageSpan = document.getElementById("pageSpan"); //PageViews
     var priceSpan = document.getElementById("priceSpan"); // $ /Month/Year
     var toggleSwitch = document.getElementById("checkbox"); // toggle switch
+    var priceTag = document.getElementById("priceTag");
 
 
     // Default Numbers
@@ -85,43 +86,54 @@
     toggleSwitch.checked = false;
 
     slider.oninput = function() {
+      // Prices without Year Billing activated
       if(slider.value <= 10 ){
         pageSpan.innerHTML = "10K"
         priceSpan.innerHTML = "$" + 8 + ".00";
+        priceTag.innerHTML = "/ month"
       }
 
       else if(slider.value >= 11 && slider.value <= 20){
         pageSpan.innerHTML = "50K"
         priceSpan.innerHTML = "$" + 12 + ".00";
+        priceTag.innerHTML = "/ month"
       }
 
       else if(slider.value >= 21 && slider.value <= 30 ){
         pageSpan.innerHTML = "100K"
         priceSpan.innerHTML = "$" + 16 + ".00";
+        priceTag.innerHTML = "/ month"
       }
       else if(slider.value >= 31 && slider.value <= 40 ){
         pageSpan.innerHTML = "500K"
         priceSpan.innerHTML = "$" + 24 + ".00";
+        priceTag.innerHTML = "/ month"
       }
       else if(slider.value >= 41 && slider.value <= 50 ){
         pageSpan.innerHTML = "1M"
         priceSpan.innerHTML = "$" + 36 + ".00";
+        priceTag.innerHTML = "/ month"
       }
-
+      // Prices with Year Billing activated
       if(toggleSwitch.checked == true && slider.value <= 10 ){
         priceSpan.innerHTML = "$" + 6 + ".00";
+        priceTag.innerHTML = "/ year"
       }
       else if(toggleSwitch.checked == true && slider.value >= 11 && slider.value <= 20){
         priceSpan.innerHTML = "$" + 9 + ".00";
+        priceTag.innerHTML = "/ year"
       }
       else if(toggleSwitch.checked == true && slider.value >= 21 && slider.value <= 30 ){
         priceSpan.innerHTML = "$" + 12 + ".00";
+        priceTag.innerHTML = "/ year"
       }
       else if(toggleSwitch.checked == true && slider.value >= 31 && slider.value <= 40 ){
         priceSpan.innerHTML = "$" + 18 + ".00";
+        priceTag.innerHTML = "/ year"
       }
       else if(toggleSwitch.checked == true && slider.value >= 41 && slider.value <= 50 ){
         priceSpan.innerHTML = "$" + 27 + ".00";
+        priceTag.innerHTML = "/ year"
       }
     }
 

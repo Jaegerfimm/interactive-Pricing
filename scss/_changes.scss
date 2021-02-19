@@ -1,0 +1,399 @@
+@import "variables";
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    font-size: 15px;
+    font-family:  'Manrope', sans-serif;
+}
+
+a, a::after, a::before, a:hover{
+    text-decoration: none;
+}
+
+html{
+    body{
+        div.main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: 100%;
+            height: 100%;
+            background-color: $myVeryPaleBlue;
+            background-image: url(/images/bg-pattern.svg);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 100% auto;
+            
+
+
+        div.root{
+            border: 1px solid red;
+            width: 600px;
+
+            #divOne{
+                border: 1px solid blue;
+                text-align: center;
+                padding: 5em 0em;
+                box-sizing: border-box;
+
+                div.divCircles{
+                    position: relative;
+                    img{
+                        width: 155px;
+                        position: absolute;
+                        left: 0px;
+                        right: 0px;
+                        top: -25px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        text-align: center;
+                    }
+                }
+                h1{
+                    line-height: .8em;
+                    color: $myDarkDesaturatedBlue;
+                }
+                p{
+                    color: $myGrayishBlue;
+                }
+            }
+            #divTwo{
+                display: grid;
+                height: 400px;
+                background: $myWhite;
+                border-radius: 10px;
+                box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.075);
+
+                #PageViews{
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    p{
+                        color: $myGrayishBlue;
+                        font-weight: 800;
+                        letter-spacing: 2px;
+                    }
+                }
+                #Price{
+                    grid-column: 2/3;
+                    grid-row: 1/2;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p{
+                        color: $myGrayishBlue;
+                        span{
+                            color: $myDarkDesaturatedBlue;
+                            font-size: 40px;
+                            font-weight: 800;
+                        }
+                        
+                    }
+                    #priceTag{
+                        padding: 0px 0px 0px 5px;
+                    }
+                }
+                #Slider{
+                    grid-column: 1/3;
+                    grid-row: 2/2;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    width: 100%;
+                    
+                    input.mySlider{
+                        -webkit-appearance: none;
+                        width: 85%;
+                        height: 10px;
+                        border-radius: 5px;
+                        background: $myLightGrayishBlueOne;
+                        outline: none;
+                        -webkit-transition: .2s;
+                        transition: opacity .2s;
+                    }
+                    input.mySlider::-webkit-slider-thumb{
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        background: $mySoftCyan;
+                        background-image: url(/images/icon-slider.svg);
+                        cursor: pointer;
+                    }
+                    input.mySlider::-moz-range-thumb {
+                        width: 45px;
+                        height: 45px;
+                        border: none;
+                        border-radius: 50%;
+                        background-color:$myStrongCyan;
+                        background-image: url(/images/icon-slider.svg);
+                        background-repeat: no-repeat;
+                        background-position: 10px;
+                        background-size: 25px;
+                        box-shadow: 0px 10px 20px hsla(174, 77%, 45%, 0.609);
+                        cursor: pointer;
+                      }
+                    input.mySlider::-webkit-slider-thumb:hover{
+                        background-color: hsl(174, 77%, 45%);
+                    }
+                    input.mySlider::-moz-range-thumb:hover{
+                        background-color: hsl(174, 77%, 45%);
+                    }
+                    input.mySlider::-webkit-slider-thumb:active{
+                        background-color:  hsl(174, 78%, 39%);
+                    }
+                    input.mySlider::-moz-range-thumb:active{
+                        background-color:  hsl(174, 78%, 39%);
+                    }
+
+                }
+                #Biling{
+                    grid-column: 1/3;
+                    grid-row: 3/3;
+
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-right: 80px;
+                    align-items: center;
+                    border-bottom: 1px solid $myLightGrayishBlueOne;
+                    
+                    // Switch checkbox
+                    label.switch{
+                        position: relative;
+                        display: inline-block;
+                        width: 48px;
+                        height: 25px;
+                        margin: 0px 15px;
+                        input{
+                            opacity: 0;
+                            width: 0;
+                            height: 0;
+                        }
+                        span.slider{
+                            position: absolute;
+                            cursor: pointer;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: $myLightGrayishBlueTwo;
+                            -webkit-transition: .4s;
+                            transition: .4s;
+                        }
+                        span.slider::before{
+                            position: absolute;
+                            content: "";
+                            width: 16px;
+                            height: 16px;
+                            left: 4px;
+                            bottom: 4px;
+                            background-color: $myWhite;
+                            -webkit-transition: .4s;
+                            transition: .4s;
+                        }
+                        
+                        input + span.slider:hover{
+                            background-color: $myStrongCyan;
+                        }
+                        input:checked + span.slider::before{
+                            -webkit-transform: translateX(23px);
+                            -ms-transform: translateX(23px);
+                            transform: translateX(23px);
+                        }
+                        span.slider.round{
+                            border-radius: 34px;
+                        }
+                        span.slider.round::before{
+                            border-radius: 50%;
+                        }
+                    }
+                    
+                    p{
+                        color: $myGrayishBlue;
+                    }
+                    #yearPricing::after{
+                        content: "25% discount";
+                        color: $myLightRed;
+                        background-color: $myLightGrayishRed;
+                        border-radius: 25px;
+                        font-size: 12px;
+                        margin-left: 8px;
+                        padding: 4px 7px;
+                    }
+                }
+                #List{
+                    grid-column: 1/2;
+                    grid-row: 4/4;
+
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    ul.list{
+                        color: $myGrayishBlue;
+                        li{
+                            list-style-type: none;
+                            padding: 5px;
+                        }
+                        li::before{
+                            content: url(/images/icon-check.svg);
+                            padding-right: 10px;
+                        }
+                    }
+                }
+                #Button{
+                    grid-column: 2/3;
+                    grid-row: 4/4;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    button{
+                        font-family: 'Manrope', sans-serif;
+                        font-weight: 800;
+                        color: $myGrayishBlue;
+                        background-color: $myDarkDesaturatedBlue;
+                        border: 0;
+                        border-radius: 25px;
+                        padding: 12px 50px 12px 50px;
+                    }
+                    button:hover{
+                        color: $myWhite;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+}
+
+// MEDIA SECTION
+html{
+    body{
+        div.main{
+            @media screen and (max-width: $smallScreen){
+            div.root{
+                margin: 0px 25px;
+                
+                    #divOne{
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        div.divCircles{
+                            img{
+                                width: 160px;
+                                top: -30px;
+                            }
+                        }
+                        h1{
+                            font-size: 24px;
+                        }
+                    }
+                    #divTwo{
+                        height: 500px;
+                        padding: 20px 0px;
+
+                        #PageViews{
+                            grid-column: 1/4;
+                            grid-row: 1/1;
+                        }
+                        #Price{
+
+                            grid-column: 1/4;
+                            grid-row: 3/3;
+                        }
+                        #Slider{
+
+                            grid-column: 1/4;
+                            grid-row: 2/2;
+                        }
+                        #Biling{
+                            padding: 0px 15px;
+                            grid-column: 1/4;
+                            grid-row: 4/4;
+
+                            #yearPricing::after{
+                                content: "-25%";
+                                font-weight: 800;
+                                margin-left: 4px;
+                            }
+                        }
+                        #List{
+                            grid-column: 1/4;
+                            grid-row: 5/5;
+                            justify-content: center;
+                            text-align: center;
+
+                        }
+                        #Button{
+                            grid-column: 1/4;
+                            grid-row: 6/6;
+                            justify-content: center;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+html{
+    body{
+        div.main{
+            @media screen and (max-width: $extraSmallScreen){
+            div.root{
+                margin: 0px 25px;
+                
+                    #divOne{
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        h1{
+                            font-size: 24px;
+                        }
+                    }
+                    #divTwo{
+                        height: 500px;
+                        padding: 20px 0px;
+
+                        #Biling{
+                            padding: 0px;
+                            grid-column: 1/4;
+                            grid-row: 4/4;
+                            padding-right: 5px;
+                            label.switch{
+                                margin: 0px 4px;
+                            }
+                            p{
+                                font-size: 14px;
+                            }
+                            #yearPricing::after{
+                                content: "-25%";
+                                font-weight: 800;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <!-- External JS and CSS/SCSS -->
+  <link rel="stylesheet" href="/scss/main.css">
+  <script src="/js/interaction.js" type="text/javascript"></script>
+  <!--Font-Family Manrope links-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  <!-- Icon and Title website-->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+</head>
+<body>
+<div class="main">
+
+  <div class="root">
+    <!--Div 1 -->
+    <div class="box" id="divOne">
+      <div class="divCircles">
+        <img src="/images/pattern-circles.svg" alt="circles symbol">
+      </div>
+      <h1>Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
+    </div>
+
+    <!--Div 2-->
+    <div class="box" id="divTwo">
+      <!--PageViews-->
+      <div class="section" id="PageViews">
+        <p><span id="pageSpan"></span> PAGEVIEWS</p>
+      </div>
+      <!--Price-->
+      <div class="section" id="Price">
+        <p id=""><span id="priceSpan"></span></p>
+        <p id="priceTag">/ month</p>
+      </div>
+      <!-- Slider -->
+      <div class="section" id="Slider">
+        <input type="range" min="1" max="50" value="25" class="mySlider" id="mySlider">
+        
+      </div>
+      <!-- Biling -->
+      <div class="section" id="Biling">
+        <p id="monthPricing">Monthly Billing</p>
+        <!--check/switch-->
+        <label class="switch">
+          <input type="checkbox" id="checkbox">
+          <span class="slider round"></span>
+        </label>
+        <p id="yearPricing">Yearly Billing</p>
+      </div>
+      <!--List-->
+      <div class="section" id="List">
+        <ul class="list">
+          <li> Unlimited websites</li>
+          <li> 100% data ownership</li>
+          <li> Email reports</li>
+        </ul>
+      </div>
+      <!--Button-->
+      <div class="section" id="Button">
+        <button>Start my trial</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+    var slider = document.getElementById("mySlider"); // Slider bar
+    var pageSpan = document.getElementById("pageSpan"); //PageViews
+    var priceSpan = document.getElementById("priceSpan"); // $ /Month/Year
+    var toggleSwitch = document.getElementById("checkbox"); // toggle switch
+
+
+    // Default Numbers
+    slider.value = 25;
+    pageSpan.innerHTML = "100K";
+    priceSpan.innerHTML = "$" + 16 + ".00";
+    toggleSwitch.checked = false;
+
+    slider.oninput = function() {
+      if(slider.value <= 10 ){
+        pageSpan.innerHTML = "10K"
+        priceSpan.innerHTML = "$" + 8 + ".00";
+      }
+
+      else if(slider.value >= 11 && slider.value <= 20){
+        pageSpan.innerHTML = "50K"
+        priceSpan.innerHTML = "$" + 12 + ".00";
+      }
+
+      else if(slider.value >= 21 && slider.value <= 30 ){
+        pageSpan.innerHTML = "100K"
+        priceSpan.innerHTML = "$" + 16 + ".00";
+      }
+      else if(slider.value >= 31 && slider.value <= 40 ){
+        pageSpan.innerHTML = "500K"
+        priceSpan.innerHTML = "$" + 24 + ".00";
+      }
+      else if(slider.value >= 41 && slider.value <= 50 ){
+        pageSpan.innerHTML = "1M"
+        priceSpan.innerHTML = "$" + 36 + ".00";
+      }
+
+      if(toggleSwitch.checked == true && slider.value <= 10 ){
+        priceSpan.innerHTML = "$" + 6 + ".00";
+      }
+      else if(toggleSwitch.checked == true && slider.value >= 11 && slider.value <= 20){
+        priceSpan.innerHTML = "$" + 9 + ".00";
+      }
+      else if(toggleSwitch.checked == true && slider.value >= 21 && slider.value <= 30 ){
+        priceSpan.innerHTML = "$" + 12 + ".00";
+      }
+      else if(toggleSwitch.checked == true && slider.value >= 31 && slider.value <= 40 ){
+        priceSpan.innerHTML = "$" + 18 + ".00";
+      }
+      else if(toggleSwitch.checked == true && slider.value >= 41 && slider.value <= 50 ){
+        priceSpan.innerHTML = "$" + 27 + ".00";
+      }
+    }
+
+</script>
+
+</body>
+</html>

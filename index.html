@@ -40,7 +40,7 @@
       </div>
       <!-- Slider -->
       <div class="section" id="Slider">
-        <input type="range" min="1" max="50" value="25" class="mySlider" id="mySlider">
+        <input type="range" min="1" max="50" value="25" class="mySlider" id="mySlider" name="slider">
         
       </div>
       <!-- Biling -->
@@ -71,13 +71,12 @@
 
 </div>
 
-<script>
+<script>  // Js Script to add interactivity when the user moves the slider bar
     var slider = document.getElementById("mySlider"); // Slider bar
     var pageSpan = document.getElementById("pageSpan"); //PageViews
     var priceSpan = document.getElementById("priceSpan"); // $ /Month/Year
     var toggleSwitch = document.getElementById("checkbox"); // toggle switch
     var priceTag = document.getElementById("priceTag"); // Monthly or Yearly
-
 
     // Default Numbers
     slider.value = 25;
@@ -136,8 +135,8 @@
         priceTag.innerHTML = "/ year"
       }
     }
-
 </script>
+
 
 </body>
 </html>

@@ -395,3 +395,44 @@ html{
         }
     }
 }
+
+html{
+    body{
+        div.main{
+            @media screen and (max-width: $phoneScreen){
+            div.root{
+                margin: 0px 25px;
+                
+                    #divOne{
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        h1{
+                            font-size: 24px;
+                        }
+                    }
+                    #divTwo{
+                        height: 500px;
+                        padding: 20px 0px;
+
+                        #Biling{
+                            padding: 0px;
+                            grid-column: 1/4;
+                            grid-row: 4/4;
+                            padding-right: 5px;
+                            label.switch{
+                                margin: 0px 4px;
+                            }
+                            p{
+                                font-size: 14px;
+                            }
+                            #yearPricing::after{
+                                content: "-25%";
+                                font-weight: 800;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

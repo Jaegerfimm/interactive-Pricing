@@ -470,4 +470,40 @@ html body div.main div.root #divTwo #Button button:hover {
     font-weight: 800;
   }
 }
+
+@media screen and (max-width: 350px) {
+  html body div.main div.root {
+    margin: 0px 25px;
+  }
+  html body div.main div.root #divOne {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  html body div.main div.root #divOne h1 {
+    font-size: 24px;
+  }
+  html body div.main div.root #divTwo {
+    height: 500px;
+    padding: 20px 0px;
+  }
+  html body div.main div.root #divTwo #Biling {
+    padding: 0px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-row: 4;
+    grid-row: 4/4;
+    padding-right: 5px;
+  }
+  html body div.main div.root #divTwo #Biling label.switch {
+    margin: 0px 4px;
+  }
+  html body div.main div.root #divTwo #Biling p {
+    font-size: 14px;
+  }
+  html body div.main div.root #divTwo #Biling #yearPricing::after {
+    content: "-25%";
+    font-weight: 800;
+  }
+}
 /*# sourceMappingURL=main.css.map */
